@@ -4,7 +4,14 @@
     "repositoryName": "yvonnezhang.github.io",
     "branch": "master"
   },
+  "site": {
+    "title": "Yvonne Zhang",
+    "description": "暂无一席地",
+    "postsPerPage": "10",
+    "disqus": "yvonnezhang"
+  },
+  "socialnetwork": {},
   "theme": {
-    "name": "Casper"
+    "name": "casper"
   }
 }
