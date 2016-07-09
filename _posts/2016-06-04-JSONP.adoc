@@ -1,0 +1,101 @@
+= JSONP 如何解决跨域问题？
+:hp-tags: JSONP
+:published_at: 2016-06-04
+
+## 跨域问题
+照例先来把问题的来源弄清楚：什么是跨域？为什么会有跨域问题？
+
+浏览器有一个安全策略：**同源策略**。同源是指，域名，协议，端口相同。浏览器会判断 AJAX 请求的 URL 是否和页面同源，避免页面引用或注入不安全的非同源脚本。
+
+> 深入阅读： https://developer.mozilla.org/zh-CN/docs/Web/Security/Same-origin_policy[JavaScript 的同源策略 - MDN]
+
+但我们知道，用 `script` 标签  **引入脚本时**，和 `img` 标签一样并不会有同源访问限制。该怎么利用这个特性，绕过同源策略呢？
+
+JSONP 的思路是这样的：
+
+- 浏览器端需要在执行脚本的时候添加一个 `script` DOM 节点，就可以从非同源的服务器拿到 JavaScript 脚本。
+- 如果在 URL 上加上回调函数名，那么非同源脚本只要传给页面一个**执行该回调函数**的脚本，并把 JSON 数据作为回调函数入参，那么页面上就可以执行这个回调函数，拿到 JSON 数据了。
+
+> 深入阅读： http://stackoverflow.com/questions/3395359/difference-between-src-and-href[Diffrence between `src` and `href` - StackOverflow]
+
+## DEMO 时间
+下面用一个最简单的 demo 来实践一下：
+
+1.  一个提供 JSONP 接口的服务器，用 Node.js 来写，启动端口是 8001
+----
+  'use strict';
+
+  const http = require('http');
+
+  const server = http.createServer((req, res) => {
+    console.log(`${req.method} ${req.url} - ${new Date().toString()}`);
+
+    // @example /?callback=foo&name=Yvonne
+    if (req.method === 'GET' && req.url.indexOf('demo.jsonp') > -1) {
+      const query = params(req.url);
+      const callback = query.callback;
+      const name = query.name;
+      const responseText = callback ? `${callback}('Hi ${name || 'sweety'}. This is a jsonp text.')` : '';
+      res.setHeader('Content-Type', 'text/javascript');
+      res.end(responseText);
+    }
+    res.end();
+  });
+
+  server.listen(8001);
+
+  /**
+  * 解析 GET 参数
+  */
+  function params(url) {
+    let params = {};
+    if (!url) {
+      return params;
+    }
+    (url.split('?')[1].split('&')).forEach((param) => {
+      let query = param.split('=');
+      params[query[0]] = query[1];
+    });
+    return params;
+  }
+----
+
+2. 一个调用接口的页面，用 `python -m SimpleHTTPServer 8002` 简单启动一个端口 8002 的服务器
+
+```
+    <html doctype>
+
+    <body>
+      <script>
+
+        function ajaxJsonp (url) {
+          var scriptElm = document.createElement('script');
+          scriptElm.setAttribute('src', url);
+          document.body.appendChild(scriptElm);
+        }
+
+        // 回调函数
+        function foo(result) {
+          alert(result);
+        }
+
+        document.onload = ajaxJsonp('http://127.0.0.1:8001/demo.jsonp?callback=foo&name=Yvonne');
+      </script>
+    </body>
+
+    </html>
+```
+
+好了，一切就绪，来看看结果：
+
+image::http://7xl4xb.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-06-04%2012.45.34.png[]
+￼
+原理就是这么简单。
+
+## 后记
+想当初终面时就被问到这个知识点，我只能尴尬坦白道我不知道。现在想想有的知识点不知道也是很正常的，有更多实战场景才会有更大的动力去深入呀。
+
+- - -
+References
+
+- http://kb.cnblogs.com/page/139725/[说说JSON和JSONP，也许你会豁然开朗]
