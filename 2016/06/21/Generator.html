@@ -12,7 +12,7 @@
 
     <link rel="shortcut icon" href="https://YvonneZhang.github.io/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="//YvonneZhang.github.io/themes/casper/assets/css/screen.css?v=1468047126383" />
+    <link rel="stylesheet" type="text/css" href="//YvonneZhang.github.io/themes/casper/assets/css/screen.css?v=1468048347197" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
     <link rel="canonical" href="https://YvonneZhang.github.io/2016/06/21/Generator.html" />
@@ -21,13 +21,13 @@
     <meta property="og:site_name" content="Yvonne Zhang" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Generator 函数初探" />
-    <meta property="og:description" content="前言 Generator 函数是 ES6 一个很重要的特性，但其涉及的概念却不太能一眼就看懂，所以写下这篇小文以作学习记录。 定义一个 generator 函数 定义一个 generator 函数十分简单，和正常的函数定义相比，多加一个 * 就可以了： function * name(arguments) {   statements } 但 generator 函数与普通函数的区别却非常大，它的优势在于，退出函数之后可以再次进入，函数的上下文会被保留。每次退出 generator 函数，它都会返回一个值，这不是一个普通的值，而是一个迭代器（iterator）对象。下面就来说一说迭代器对象。 迭代器对象 迭代器有一个特别棒的特性，就是可以记录当前数组遍历到的节点位置。除此之外，按照[协议规" />
+    <meta property="og:description" content="前言 Generator 函数是 ES6 一个很重要的特性，但其涉及的概念却不太能一眼就看懂，所以写下这篇小文以作学习记录。 定义一个 generator 函数 定义一个 generator 函数十分简单，和正常的函数定义相比，多加一个 * 就可以了： function * name(arguments) {   statements } 但 generator 函数与普通函数的区别却非常大，它的优势在于，退出函数之后可以再次进入，函数的上下文会被保留。每次退出 generator 函数，它都会返回一个值，这不是一个普通的值，而是一个迭代器（iterator）对象。下面就来说一说迭代器对象。 迭代器对象 迭代器有一个特别棒的特性，就是可以记录当前数组遍历到的节点位置。除此之外，按照 协议规" />
     <meta property="og:url" content="https://YvonneZhang.github.io/2016/06/21/Generator.html" />
     <meta property="article:tag" content="JavaScript" />
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Generator 函数初探" />
-    <meta name="twitter:description" content="前言 Generator 函数是 ES6 一个很重要的特性，但其涉及的概念却不太能一眼就看懂，所以写下这篇小文以作学习记录。 定义一个 generator 函数 定义一个 generator 函数十分简单，和正常的函数定义相比，多加一个 * 就可以了： function * name(arguments) {   statements } 但 generator 函数与普通函数的区别却非常大，它的优势在于，退出函数之后可以再次进入，函数的上下文会被保留。每次退出 generator 函数，它都会返回一个值，这不是一个普通的值，而是一个迭代器（iterator）对象。下面就来说一说迭代器对象。 迭代器对象 迭代器有一个特别棒的特性，就是可以记录当前数组遍历到的节点位置。除此之外，按照[协议规" />
+    <meta name="twitter:description" content="前言 Generator 函数是 ES6 一个很重要的特性，但其涉及的概念却不太能一眼就看懂，所以写下这篇小文以作学习记录。 定义一个 generator 函数 定义一个 generator 函数十分简单，和正常的函数定义相比，多加一个 * 就可以了： function * name(arguments) {   statements } 但 generator 函数与普通函数的区别却非常大，它的优势在于，退出函数之后可以再次进入，函数的上下文会被保留。每次退出 generator 函数，它都会返回一个值，这不是一个普通的值，而是一个迭代器（iterator）对象。下面就来说一说迭代器对象。 迭代器对象 迭代器有一个特别棒的特性，就是可以记录当前数组遍历到的节点位置。除此之外，按照 协议规" />
     <meta name="twitter:url" content="https://YvonneZhang.github.io/2016/06/21/Generator.html" />
     
     <script type="application/ld+json">
@@ -93,7 +93,7 @@ null
 <h2 id="___2">迭代器对象</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>迭代器有一个特别棒的特性，就是可以记录当前数组遍历到的节点位置。除此之外，按照[协议规范](<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols)，迭代器对象需要提供一个" class="bare">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols)，迭代器对象需要提供一个</a> <code>next</code> 方法继续遍历下一个属性值，该方法返回一个如下对象：</p>
+<p>迭代器有一个特别棒的特性，就是可以记录当前数组遍历到的节点位置。除此之外，按照 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols">协议规范</a>，迭代器对象需要提供一个 <code>next</code> 方法继续遍历下一个属性值，该方法返回一个如下对象：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -135,7 +135,7 @@ console.log(iterableArray.next().done)  // true</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>一些内置的可迭代的对象有 <code>String</code>、<code>Array</code>、<code>TypedArray</code>、<code>Map</code>、<code>Set</code>，简单的判断规则就是：可以使用 <code>for&#8230;&#8203;of</code> 遍历的对象。这样的对象也可以使用 [扩展运算符（&#8230;&#8203;）](<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator)、">解构赋值（destructuring assignment）</a>(<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment" class="bare">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment</a>) 和 generator，generator 提供了更好的遍历可迭代对象的方法。</p>
+<p>一些内置的可迭代的对象有 <code>String</code>、<code>Array</code>、<code>TypedArray</code>、<code>Map</code>、<code>Set</code>，简单的判断规则就是：可以使用 <code>for&#8230;&#8203;of</code> 遍历的对象。这样的对象也可以使用 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator">扩展运算符（&#8230;&#8203;）</a>、 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">解构赋值（destructuring assignment）</a> 和 generator，generator 提供了更好的遍历可迭代对象的方法。</p>
 </div>
 </div>
 </div>
@@ -172,9 +172,17 @@ console.log(gen('Bob').next()); // { value: 'Hello, Bob', done: false }</code></
 </div>
 <hr>
 <div class="paragraph">
-<p>References
-- [Iterators and generators](<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators" class="bare">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators</a>)
-- [Episode 2 – Understanding JavaScript Generators](<a href="http://knowthen.com/episode-2-understanding-javascript-generators/" class="bare">http://knowthen.com/episode-2-understanding-javascript-generators/</a>)</p>
+<p>References</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators">Iterators and generators</a></p>
+</li>
+<li>
+<p><a href="http://knowthen.com/episode-2-understanding-javascript-generators/">Episode 2 – Understanding JavaScript Generators</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -263,8 +271,8 @@ console.log(gen('Bob').next()); // { value: 'Hello, Bob', done: false }</code></
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script type="text/javascript" src="//YvonneZhang.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1468047126383"></script>
-    <script type="text/javascript" src="//YvonneZhang.github.io/themes/casper/assets/js/index.js?v=1468047126383"></script>
+    <script type="text/javascript" src="//YvonneZhang.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1468048347197"></script>
+    <script type="text/javascript" src="//YvonneZhang.github.io/themes/casper/assets/js/index.js?v=1468048347197"></script>
 
 </body>
 </html>
