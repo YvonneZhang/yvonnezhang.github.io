@@ -10,7 +10,12 @@
     "postsPerPage": "10",
     "disqus": "yvonnezhang"
   },
-  "socialnetwork": {},
+  "socialnetwork": {
+    "email": "zhyifa001@gmail.com",
+    "twitter": "YvonneZhang_LOL",
+    "instagram": "yvonnezhangsh",
+    "github": "YvonneZhang"
+  },
   "theme": {
     "name": "casper"
   }
