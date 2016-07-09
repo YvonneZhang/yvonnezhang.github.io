@@ -14,11 +14,11 @@
   },
   "socialnetwork": {
     "email": "zhyifa001@gmail.com",
-    "twitter": "YvonneZhang_LOL",
-    "instagram": "yvonnezhangsh",
-    "github": "YvonneZhang"
+    "twitter": "https://twitter.com/YvonneZhang_LOL",
+    "instagram": "https://www.instagram.com/yvonne.zhang.sh/",
+    "github": "https://github.com/YvonneZhang"
   },
   "theme": {
-    "name": "ichi"
+    "name": "casper"
   }
 }
