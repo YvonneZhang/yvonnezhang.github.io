@@ -6,12 +6,12 @@ import './index.less'
 export default () => {
   return <header>
     <Link to={'/'}>
-      <img className="logo" src="http://7xl4xb.com1.z0.glb.clouddn.com/favicon.ico" alt="Logo"/>         
+      <img className="logo" src="http://7xl4xb.com1.z0.glb.clouddn.com/favicon.ico" alt="Logo"/>
     </Link>
     <nav>
       <ul>
         <li>
-          <Link to={'/'}>
+          <Link to={'/articles/'}>
             Articles
           </Link>
         </li>

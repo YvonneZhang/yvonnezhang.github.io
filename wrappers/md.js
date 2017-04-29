@@ -2,24 +2,24 @@ import React from 'react'
 import moment from 'moment'
 import Helmet from "react-helmet"
 import ReadNext from '../components/ReadNext'
-import { rhythm } from 'utils/typography'
-import { config } from 'config'
+import {rhythm} from 'utils/typography'
+import {config} from 'config'
 import Bio from 'components/Bio'
 
 import '../css/zenburn.css'
 
 class MarkdownWrapper extends React.Component {
-  render () {
-    const { route } = this.props
+  render() {
+    const {route} = this.props
     const post = route.page.data
-
+    console.log(route.page)
     return (
       <div className="markdown">
         <Helmet
           title={`${post.title} | ${config.blogTitle}`}
         />
         <h1 style={{marginTop: 0}}>{post.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.body }} />
+        <div dangerouslySetInnerHTML={{__html: post.body}}/>
         <em
           style={{
             display: 'block',
@@ -33,7 +33,7 @@ class MarkdownWrapper extends React.Component {
             marginBottom: rhythm(2),
           }}
         />
-        <ReadNext post={post} pages={route.pages} />
+        <ReadNext post={post} pages={route.pages}/>
         <Bio />
       </div>
     )
