@@ -1,0 +1,17 @@
+---
+title: CSS Position 练习笔记
+date: "2013-12-06"
+path: "/css-position/"
+---
+之前写页面时，总觉得对 css 不熟悉，所以这个学期就开始打好 css 的基础。现在正在看 CSS Mastery，相比 CSS The Definitive Guide 而言，读起来更有趣，自己更有做练习实践的冲动。
+
+今天做的这个练习（如下）主要是实践下 Chapter 3 定位知识。
+
+<p data-height="450" data-theme-id="2162" data-slug-hash="wcCHg" data-user="YvonneZhang" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/YvonneZhang/pen/wcCHg'>Positioning - CSS Exercise</a> by Yvonne Zhang (<a href='http://codepen.io/YvonneZhang'>@YvonneZhang</a>) on <a href='http://codepen.io'>CodePen</a>
+<script async src="//codepen.io/assets/embed/ei.js"></script>
+
+## Notes:
+### 如何实现文字置于 box 右下角？
+首先想到对文字使用 `position: absolute;` , 但是会出现 Box group 3 那样文字跳脱出 box 的情况，原因是 absolute 生成绝对定位的元素，只相对于 static 定位以外的第一个父元素进行定位。
+
+其他的知识点问题不大，无需赘述。

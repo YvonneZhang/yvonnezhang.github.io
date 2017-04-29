@@ -6,8 +6,8 @@ class Bio extends React.Component {
     return (
       <section>
         <h1>HI, I'M YVONNE.</h1>
-        <h2>A WEB-DEVELOPER.</h2>
-        <h2>A DANCEHOLIC.</h2>
+        <p>A WEB-DEVELOPER.</p>
+        <p>A DANCEHOLIC.</p>
       </section>
     )
   }
