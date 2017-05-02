@@ -1,47 +1,120 @@
-import React from 'react'
-import moment from 'moment'
-import Helmet from "react-helmet"
-import ReadNext from '../components/ReadNext'
-import {rhythm} from 'utils/typography'
-import {config} from 'config'
-import Bio from 'components/Bio'
-
-import '../css/zenburn.css'
+import React from "react";
+import moment from "moment";
+import Helmet from "react-helmet";
+import ReadNext from "../components/ReadNext";
+import { rhythm } from "utils/typography";
+import { config } from "config";
+import Bio from "components/Bio";
+import { Link } from "react-router";
+import { blogs, getSiblingBlogs } from "../utils/pages";
+import { Row, Col } from "react-grid-system";
+import "../css/zenburn.css";
+import "./md.less";
+import { Button } from 'antd';
 
 class MarkdownWrapper extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      hide: false
+    };
+  }
+
+  componentWillMount() {
+    const self = this;
+    window.addEventListener("scroll", e => {
+      const header = document.querySelector(".article-header");
+      if (document.body.scrollTop > header.clientHeight) {
+        self.setState({
+          hide: true
+        });
+      } else {
+        self.setState({
+          hide: false
+        });
+      }
+    });
+  }
+
+  renderHeader() {
+    const { route } = this.props;
+    const { previous, next } = getSiblingBlogs(route.path, blogs("dateDesc"));
+    return (
+      <nav className="article-header">
+        <Row>
+          <Col md={4}>
+            {previous
+              ? <Link to={previous.path}>
+                  <div className="fingerpost left">PREVIOUS</div>
+                  {this.state.hide ? null : <div>{previous.data.title}</div>}
+                </Link>
+              : null}
+          </Col>
+          <Col md={4}>
+            {this.state.hide
+              ? <div>{route.page.data.title}</div>
+              : <img className="logo" src={config.logo} alt="logo" />}
+
+          </Col>
+          <Col md={4}>
+            {next
+              ? <Link to={next.path}>
+                  <div className="fingerpost right">NEXT</div>
+                  {this.state.hide ? null : <div>{next.data.title}</div>}
+                </Link>
+              : null}
+          </Col>
+        </Row>
+      </nav>
+    );
+  }
+
+  mousemoveHandler() {
+    const header = document.querySelector(".article-header");
+    if (document.body.scrollTop > header.clientHeight) {
+      this.setState({
+        hide: true
+      });
+    }
+  }
+
   render() {
-    const {route} = this.props
-    const post = route.page.data
-    console.log(route.page)
+    const { route } = this.props;
+    const post = route.page.data;
     return (
       <div className="markdown">
-        <Helmet
-          title={`${post.title} | ${config.blogTitle}`}
-        />
-        <h1 style={{marginTop: 0}}>{post.title}</h1>
-        <div dangerouslySetInnerHTML={{__html: post.body}}/>
-        <em
+        <Helmet title={`${post.title} | ${config.blogTitle}`} />
+        {this.renderHeader()}
+        <h1 style={{ marginTop: 0 }}>{post.title}</h1>
+        <div
           style={{
-            display: 'block',
+            display: "block",
             marginBottom: rhythm(2),
+            color: "#1CA086"
           }}
         >
-          Posted {moment(post.date).format('MMMM D, YYYY')}
-        </em>
+          <span>
+            Posted on {moment(post.date).format("MMMM D, YYYY")}
+          </span>
+          {"  |  "}
+          <span id="busuanzi_container_page_pv">
+            <span id="busuanzi_value_page_pv" /> views
+          </span>
+        </div>
+        <div dangerouslySetInnerHTML={{ __html: post.body }} />
         <hr
           style={{
-            marginBottom: rhythm(2),
+            marginBottom: rhythm(2)
           }}
         />
-        <ReadNext post={post} pages={route.pages}/>
-        <Bio />
+        <ReadNext post={post} pages={route.pages} />
       </div>
-    )
+    );
   }
 }
 
 MarkdownWrapper.propTypes = {
-  route: React.PropTypes.object,
-}
+  route: React.PropTypes.object
+};
 
-export default MarkdownWrapper
+export default MarkdownWrapper;

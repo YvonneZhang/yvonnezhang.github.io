@@ -1,0 +1,30 @@
+@header-height: 80px;
+
+.markdown {
+  position: relative;
+  top: @header-height;
+}
+
+.article-header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  height: @header-height;
+  background: #fff;
+  .logo {
+    position: relative;
+    transition: transform(-50%);
+  }
+  .fingerpost {
+    color: #9F9993;
+    font-size: 18px;
+    &.left {
+      text-align: left;
+    }
+    &.right {
+      text-align: right;
+    }
+  }
+}

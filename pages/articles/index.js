@@ -1,38 +1,44 @@
 import React from "react";
 import { Link } from "react-router";
+import { config } from "config";
+import { blogs } from "../../utils/pages";
+import "./index.less";
 
-const renderList = pages => {
-  return pages
-    .filter(page => page.file.path.indexOf("blogs/") > -1)
-    .sort((a, b) => {
-      const dateA = new Date(a.data.date).getTime();
-      const dateB = new Date(b.data.date).getTime();
-      if (dateA < dateB) {
-        return 1;
-      }
-      if (dateA > dateB) {
-        return -1;
-      }
-      return 0;
-    })
-    .map(page => (
-      <li key={page.path}>
-        <Link to={page.path}>
-          {page.data.title}
-        </Link>
-        <span>{new Date(page.data.date).toLocaleDateString()}</span>
-      </li>
-    ));
+const getHtmlText = html => {
+  const wrapper = document.createElement("div");
+  wrapper.innerHTML = html;
+  return wrapper.innerText.replace(/\s+/g, " ").slice(0, 100) + "...";
+};
+
+const renderCard = page => {
+  const date = new Date(page.data.date).toLocaleDateString();
+  return (
+    <Link to={page.path}>
+      <div className="article-card">
+        <div className="title">{page.data.title}</div>
+        <div className="divider" />
+        <p className="brief">
+          {getHtmlText(page.data.body)}
+        </p>
+        <div className="date">{date}</div>
+      </div>
+    </Link>
+  );
+};
+
+const renderList = () => {
+  return blogs("dateDesc").map(page => (
+    <div key={page.path}>
+      {renderCard(page)}
+    </div>
+  ));
 };
 
 const Articles = ({ route }) => {
   const { pages } = route;
   return (
     <div>
-      <ul>
-        {renderList(pages)}
-      </ul>
-
+      {renderList()}
     </div>
   );
 };

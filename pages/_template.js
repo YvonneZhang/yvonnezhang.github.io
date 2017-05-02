@@ -7,13 +7,25 @@ import Helmet from "react-helmet";
 import Header from "components/Header";
 
 class Template extends React.Component {
+  renderHeader() {
+    switch (this.props.location.pathname) {
+      case '/':
+      case '/articles/':
+        return <Header />;
+      default:
+        return null;
+    }
+  }
+
   render() {
     const { children } = this.props;
+
     return (
       <Container
         style={{
           // maxWidth: rhythm(24),
           padding: `${rhythm(2)} 0`
+
         }}
       >
         <Helmet
@@ -23,7 +35,7 @@ class Template extends React.Component {
             { name: "keywords", content: "blog, articles" }
           ]}
         />
-        <Header />
+        {this.renderHeader()}
         {children}
       </Container>
     );
