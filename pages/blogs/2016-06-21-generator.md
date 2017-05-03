@@ -1,7 +1,6 @@
 ---
 title: Generator 函数初探
 date: "2016-06-21"
-readNext: "/jsonp/"
 path: "/generator/"
 ---
 

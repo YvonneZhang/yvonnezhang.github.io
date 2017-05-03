@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 import { Link } from "react-router";
 import { config } from "config";
 import { blogs } from "../../utils/pages";
@@ -11,7 +12,7 @@ const getHtmlText = html => {
 };
 
 const renderCard = page => {
-  const date = new Date(page.data.date).toLocaleDateString();
+  const date = moment(page.data.date).format("MMMM D, YYYY");
   return (
     <Link to={page.path}>
       <div className="article-card">

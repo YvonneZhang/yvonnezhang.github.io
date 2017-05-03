@@ -5,15 +5,25 @@ import { rhythm, scale } from "utils/typography";
 import { config } from "config";
 import Helmet from "react-helmet";
 import Header from "components/Header";
+import Footer from "components/Footer";
 
 class Template extends React.Component {
   renderHeader() {
     switch (this.props.location.pathname) {
-      case '/':
-      case '/articles/':
+      case "/":
+      case "/articles/":
         return <Header />;
       default:
         return null;
+    }
+  }
+
+  renderFooter() {
+    switch (this.props.location.pathname) {
+      case "/":
+        return null;
+      default:
+        return <Footer />;
     }
   }
 
@@ -21,13 +31,7 @@ class Template extends React.Component {
     const { children } = this.props;
 
     return (
-      <Container
-        style={{
-          // maxWidth: rhythm(24),
-          padding: `${rhythm(2)} 0`
-
-        }}
-      >
+      <div>
         <Helmet
           title={config.blogTitle}
           meta={[
@@ -35,9 +39,17 @@ class Template extends React.Component {
             { name: "keywords", content: "blog, articles" }
           ]}
         />
-        {this.renderHeader()}
-        {children}
-      </Container>
+        <Container
+          style={{
+            maxWidth: rhythm(24),
+            padding: `${rhythm(2)} 0`
+          }}
+        >
+          {this.renderHeader()}
+          {children}
+        </Container>
+        {this.renderFooter()}
+      </div>
     );
   }
 }
