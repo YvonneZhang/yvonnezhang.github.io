@@ -10,7 +10,6 @@ import { blogs, getSiblingBlogs } from "../utils/pages";
 import { Row, Col } from "react-grid-system";
 import "../css/zenburn.css";
 import "./md.less";
-import { Button } from 'antd';
 
 class MarkdownWrapper extends React.Component {
   constructor() {
@@ -36,31 +35,43 @@ class MarkdownWrapper extends React.Component {
     });
   }
 
+  mouseEnterHandler() {
+    this.setState({
+      hide: false
+    });
+  }
+
   renderHeader() {
     const { route } = this.props;
     const { previous, next } = getSiblingBlogs(route.path, blogs("dateDesc"));
+
     return (
-      <nav className="article-header">
-        <Row>
-          <Col md={4}>
+      <nav
+        className={`article-header`}
+        onMouseEnter={this.mouseEnterHandler.bind(this)}
+      >
+        <div className={`content article-title ${this.state.hide ? "show" : ""}`}>
+          {route.page.data.title}
+        </div>
+        <Row className={`content ${this.state.hide ? "" : "show"}`}>
+          <Col className="left" md={4}>
             {previous
               ? <Link to={previous.path}>
-                  <div className="fingerpost left">PREVIOUS</div>
-                  {this.state.hide ? null : <div>{previous.data.title}</div>}
+                  <div className="fingerpost">PREVIOUS</div>
+                  <div>{previous.data.title}</div>
                 </Link>
               : null}
           </Col>
-          <Col md={4}>
-            {this.state.hide
-              ? <div>{route.page.data.title}</div>
-              : <img className="logo" src={config.logo} alt="logo" />}
-
+          <Col className="center" md={4}>
+            <Link to="/">
+              <img className="logo" src={config.logo} alt="logo" />
+            </Link>
           </Col>
-          <Col md={4}>
+          <Col className="right" md={4}>
             {next
               ? <Link to={next.path}>
-                  <div className="fingerpost right">NEXT</div>
-                  {this.state.hide ? null : <div>{next.data.title}</div>}
+                  <div className="fingerpost">NEXT</div>
+                  <div>{next.data.title}</div>
                 </Link>
               : null}
           </Col>
