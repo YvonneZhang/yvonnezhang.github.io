@@ -11,13 +11,18 @@
     "gatsby": "^0.12.36",
     "lodash": "^4.17.2",
     "moment": "^2.17.1",
+    "normalize.css": "^7.0.0",
+    "rc-progress": "^2.1.1",
     "react-addons-shallow-compare": "^15.4.1",
     "react-grid-system": "^2.7.0",
     "react-helmet": "^3.2.2",
     "react-typography": "^0.15.0",
     "typography": "^0.15.8",
     "typography-theme-fairy-gates": "^0.15.0",
+    "typography-theme-moraga": "^0.15.10",
+    "typography-theme-st-annes": "^0.15.10",
     "typography-theme-twin-peaks": "^0.15.0",
+    "typography-theme-wordpress-2013": "^0.15.10",
     "underscore.string": "^3.2.3"
   },
   "devDependencies": {

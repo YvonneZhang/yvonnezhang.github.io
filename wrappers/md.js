@@ -8,6 +8,8 @@ import Bio from "components/Bio";
 import { Link } from "react-router";
 import { blogs, getSiblingBlogs } from "../utils/pages";
 import { Row, Col } from "react-grid-system";
+import { Line } from "rc-progress";
+
 import "../css/zenburn.css";
 import "./md.less";
 
@@ -15,7 +17,8 @@ class MarkdownWrapper extends React.Component {
   constructor() {
     super();
     this.state = {
-      hide: false
+      hide: false,
+      progress: 0
     };
   }
 
@@ -23,6 +26,14 @@ class MarkdownWrapper extends React.Component {
     const self = this;
     window.addEventListener("scroll", e => {
       const header = document.querySelector(".article-header");
+      self.setState({
+        progress: parseInt(
+          (document.body.scrollTop + window.innerHeight) /
+            document.body.clientHeight *
+            100,
+          10
+        )
+      });
       if (document.body.scrollTop > header.clientHeight) {
         self.setState({
           hide: true
@@ -47,10 +58,12 @@ class MarkdownWrapper extends React.Component {
 
     return (
       <nav
-        className={`article-header`}
+        className={`article-header ${this.state.hide ? "collapse" : ""}`}
         onMouseEnter={this.mouseEnterHandler.bind(this)}
       >
-        <div className={`content article-title ${this.state.hide ? "show" : ""}`}>
+        <div
+          className={`content article-title ${this.state.hide ? "show" : ""}`}
+        >
           {route.page.data.title}
         </div>
         <Row className={`content ${this.state.hide ? "" : "show"}`}>
@@ -93,15 +106,26 @@ class MarkdownWrapper extends React.Component {
     const { route } = this.props;
     const post = route.page.data;
     return (
-      <div className="markdown">
+      <div
+        className="markdown"
+        style={{
+          padding: `100px ${rhythm(3)} ${rhythm(1)} ${rhythm(3)}`
+        }}
+      >
         <Helmet title={`${post.title} | ${config.blogTitle}`} />
+        <Line
+          className="page-progress"
+          percent={this.state.progress}
+          strokeWidth="0.2"
+          strokeColor="#98C9FB"
+          trailColor="rgba(0,0,0,0)"
+        />
         {this.renderHeader()}
         <h1 style={{ marginTop: 0 }}>{post.title}</h1>
         <div
           style={{
             display: "block",
-            marginBottom: rhythm(2),
-            color: "#1CA086"
+            marginBottom: rhythm(2)
           }}
         >
           <span>
@@ -118,7 +142,7 @@ class MarkdownWrapper extends React.Component {
             marginBottom: rhythm(2)
           }}
         />
-        <ReadNext post={post} pages={route.pages} />
+
       </div>
     );
   }

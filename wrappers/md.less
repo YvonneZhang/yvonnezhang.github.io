@@ -1,7 +1,12 @@
 @header-height: 100px;
+@header-height-collapse: 60px;
 .markdown {
-  position: relative;
-  top: @header-height;
+  .page-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
 }
 
 .article-header {
@@ -12,20 +17,25 @@
   height: @header-height;
   font-size: 16px;
   background: #fff;
-  /*box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);*/
+  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-out;
+  &.collapse {
+    height: @header-height-collapse;
+  }
   a {
     text-decoration: none;
     background-image: none;
   }
   .center {
-    height: @header-height;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100%;
+    text-align: center;
+    .logo {
+      max-height: 80px;
+    }
   }
   .left {
     text-align: left;
-    height: @header-height;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -33,7 +43,7 @@
   }
   .right {
     text-align: right;
-    height: @header-height;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -45,20 +55,21 @@
   }
   .article-title {
     text-align: center;
+    vertical-align: middle;
     font-size: 22px;
     font-weight: bold;
-    line-height: @header-height;
+    /*line-height: 50px;*/
     height: 100%;
   }
   .content {
     position: absolute;
-    padding: 10px;
+    padding: 20px;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     opacity: 0;
-    transition: all 0.3s ease-out;
+    transition: all 0.2s ease-out;
     visibility: hidden;
     &.show {
       opacity: 1;

@@ -6,6 +6,7 @@ import { config } from "config";
 import Helmet from "react-helmet";
 import Header from "components/Header";
 import Footer from "components/Footer";
+// import "normalize.css";
 
 class Template extends React.Component {
   renderHeader() {
@@ -41,7 +42,6 @@ class Template extends React.Component {
         />
         <Container
           style={{
-            maxWidth: rhythm(24),
             padding: `${rhythm(2)} 0`
           }}
         >
