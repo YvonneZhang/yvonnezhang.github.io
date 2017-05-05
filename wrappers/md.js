@@ -117,7 +117,7 @@ class MarkdownWrapper extends React.Component {
           className="page-progress"
           percent={this.state.progress}
           strokeWidth="0.2"
-          strokeColor="#98C9FB"
+          strokeColor="#FEC22E"
           trailColor="rgba(0,0,0,0)"
         />
         {this.renderHeader()}

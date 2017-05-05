@@ -1,33 +1,25 @@
 import React from "react";
 import { rhythm } from "utils/typography";
 import { Link } from "react-router";
-import "./index.less";
 import { config } from "config";
+import "./index.less";
 
 export default () => {
   return (
     <header>
-      <Link to={"/"}>
-        <img className="logo" src={config.logo} alt="Logo" />
-      </Link>
       <nav>
-        <ul>
-          <li>
-            <Link to={"/articles/"}>
-              Articles
-            </Link>
-          </li>
-          <li>
-            <Link to={"/"}>
-              Resume
-            </Link>
-          </li>
-          <li>
-            <Link to={"/"}>
-              Contact
-            </Link>
-          </li>
-        </ul>
+        <Link to={"/"}>
+          <img className="logo" src={config.logo} alt="Logo" />
+        </Link>
+        <Link to={"/articles/"} activeClassName="active">
+          Articles
+        </Link>
+        <Link to={"/a"} activeClassName="active">
+          Résumé
+        </Link>
+        <Link to={"/g"} activeClassName="active">
+          Contact
+        </Link>
       </nav>
     </header>
   );
