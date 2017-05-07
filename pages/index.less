@@ -1,3 +1,4 @@
+@import '../css/theme.less';
 html {
   height: 100%;
 }
@@ -8,14 +9,50 @@ html {
   right: 0;
   height: 100%;
   z-index: -1;
+  width: 35%;
+  background: url(http://7xl4xb.com1.z0.glb.clouddn.com/IMG_4051.JPG);
+  background-size: cover;
+  background-position: 300px 0;
+}
+
+.bio {
+  margin: 60px 0;
+  .name {
+    color: @color-primary-3;
+  }
+  i {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    background-size: cover;
+    &.icon-location {
+      background-image: url(../images/location.png);
+    }
+    &.icon-dance {
+      background-image: url(../images/phone-dance.png);
+    }
+    &.icon-computer {
+      background-image: url(../images/computer.png);
+    }
+    &.icon-code {
+      background-image: url(../images/code.png);
+    }
+    &.icon-girl {
+      background-image: url(../images/girl.png);
+    }
+  }
 }
 
 .divider {
-  height: 1px;
+  height: 2px;
   width: 100%;
   background: #E9EAEA;
   &.divider-vertical {
-    width: 1px;
+    width: 2px;
     height: 100%;
   }
+}
+
+.latest-articles {
+  margin-top: 60px;
 }

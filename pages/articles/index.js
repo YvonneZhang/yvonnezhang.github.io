@@ -6,9 +6,10 @@ import { blogs } from "../../utils/pages";
 import "./index.less";
 
 const getHtmlText = html => {
-  const wrapper = document.createElement("div");
-  wrapper.innerHTML = html;
-  return wrapper.innerText.replace(/\s+/g, " ").slice(0, 100) + "...";
+  return (
+    html.replace(/<(?:.|\n)*?>/gm, "").replace(/\s+/g, " ").slice(0, 100) +
+    "..."
+  );
 };
 
 const renderCard = page => {

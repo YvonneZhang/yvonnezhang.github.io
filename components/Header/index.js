@@ -14,12 +14,12 @@ export default () => {
         <Link to={"/articles/"} activeClassName="active">
           Articles
         </Link>
-        <Link to={"/a"} activeClassName="active">
+        {/*<Link to={"/a"} activeClassName="active">
           Résumé
         </Link>
         <Link to={"/g"} activeClassName="active">
           Contact
-        </Link>
+        </Link>*/}
       </nav>
     </header>
   );

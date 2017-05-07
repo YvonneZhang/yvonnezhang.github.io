@@ -1,11 +1,8 @@
 {
-  "name": "gatsby-starter-blog",
-  "description": "Starter Gatsby Blog",
+  "name": "yvonne-zhang-blog",
+  "description": "Yvonne Zhang's Blog",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby-starter-blog/issues"
-  },
+  "author": "Yvonne Zhang <zhyifa001@gmail.com>",
   "dependencies": {
     "antd": "^2.9.3",
     "gatsby": "^0.12.36",
@@ -18,9 +15,12 @@
     "react-helmet": "^3.2.2",
     "react-typography": "^0.15.0",
     "typography": "^0.15.8",
+    "typography-theme-alton": "^0.15.10",
     "typography-theme-fairy-gates": "^0.15.0",
+    "typography-theme-grand-view": "^0.15.10",
     "typography-theme-moraga": "^0.15.10",
     "typography-theme-st-annes": "^0.15.10",
+    "typography-theme-sutro": "^0.15.10",
     "typography-theme-twin-peaks": "^0.15.0",
     "typography-theme-wordpress-2013": "^0.15.10",
     "underscore.string": "^3.2.3"
@@ -32,16 +32,14 @@
     "eslint-config-airbnb": "^14.1.0",
     "gh-pages": "^0.12.0"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
     "gatsby"
   ],
-  "license": "MIT",
-  "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/YvonneZhang/yvonnezhang.github.io.git"
   },
+  "license": "MIT",
   "scripts": {
     "dev": "gatsby develop",
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",

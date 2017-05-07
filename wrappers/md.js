@@ -4,7 +4,6 @@ import Helmet from "react-helmet";
 import ReadNext from "../components/ReadNext";
 import { rhythm } from "utils/typography";
 import { config } from "config";
-import Bio from "components/Bio";
 import { Link } from "react-router";
 import { blogs, getSiblingBlogs } from "../utils/pages";
 import { Row, Col } from "react-grid-system";
@@ -22,7 +21,7 @@ class MarkdownWrapper extends React.Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     const self = this;
     window.addEventListener("scroll", e => {
       const header = document.querySelector(".article-header");
