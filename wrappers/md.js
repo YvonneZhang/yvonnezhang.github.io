@@ -121,12 +121,7 @@ class MarkdownWrapper extends React.Component {
         />
         {this.renderHeader()}
         <h1 style={{ marginTop: 0 }}>{post.title}</h1>
-        <div
-          style={{
-            display: "block",
-            marginBottom: rhythm(2)
-          }}
-        >
+        <div className="post-date">
           <span>
             Posted on {moment(post.date).format("MMMM D, YYYY")}
           </span>
@@ -136,12 +131,6 @@ class MarkdownWrapper extends React.Component {
           </span>
         </div>
         <div dangerouslySetInnerHTML={{ __html: post.body }} />
-        <hr
-          style={{
-            marginBottom: rhythm(2)
-          }}
-        />
-
       </div>
     );
   }

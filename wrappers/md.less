@@ -1,3 +1,4 @@
+@import '../css/theme.less';
 @header-height: 100px;
 @header-height-collapse: 60px;
 .markdown {
@@ -6,6 +7,10 @@
     top: 0;
     left: 0;
     z-index: 1;
+  }
+  .post-date {
+    color: @color-text-1;
+    margin-bottom: 50px;
   }
 }
 
@@ -50,7 +55,7 @@
     overflow: hidden;
   }
   .fingerpost {
-    color: #9F9993;
+    color: @color-text-1;
     font-size: 14px;
   }
   .article-title {
