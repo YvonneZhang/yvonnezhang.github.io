@@ -3,6 +3,7 @@ import Helmet from "react-helmet";
 import { prefixLink } from "gatsby-helpers";
 import { GoogleFont, TypographyStyle } from "react-typography";
 import typography from "./utils/typography";
+import { config } from "config";
 
 const BUILD_TIME = new Date().getTime();
 
@@ -29,6 +30,7 @@ module.exports = React.createClass({
     return (
       <html lang="en">
         <head>
+          <link rel="icon" href={config.favicon} type="image/x-icon" />
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta
