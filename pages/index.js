@@ -35,12 +35,12 @@ const LatestArticles = ({ pages }) => {
             <Link style={{ boxShadow: "none" }} to={prefixLink(page.path)}>
               {get(page, "data.title", page.path)}
             </Link>
-            {index < last2Pages.length - 1
-              ? <div
-                  className="divider divider-vertical"
-                  style={{ position: "absolute", right: 0, top: 0 }}
-                />
-              : null}
+            {index < last2Pages.length - 1 ? (
+              <div
+                className="divider divider-vertical"
+                style={{ position: "absolute", right: 0, top: 0 }}
+              />
+            ) : null}
           </Col>
         ))}
       </Row>
@@ -48,28 +48,30 @@ const LatestArticles = ({ pages }) => {
   );
 };
 
+const Bio = () => (
+  <section className="bio">
+    <div className="info">
+      <p>HI, I'M YVONNE</p>
+      <p>A WEB DEVELOPER</p>
+      <p>A DANCEHOLIC</p>
+      <p>HANGZHOU, CHINA</p>
+    </div>
+    <img src={config.indexImage} />
+  </section>
+);
+
 class BlogIndex extends React.Component {
   render() {
     return (
       <div>
-        <aside className="side-image" />
-        <section className="bio">
-          <h1> <i className="icon-girl" /> HI, I'M <span className="">YVONNE</span></h1>
-          <h1> <i className="icon-code" /> A WEB DEVELOPER</h1>
-          <h1> <i className="icon-dance" /> A DANCEHOLIC</h1>
-          <h1> <i className="icon-location" /> HANGZHOU, CHINA</h1>
-        </section>
-        <div
-          className="divider"
-          style={{
-            width: "60%"
-          }}
-        />
-        <LatestArticles pages={this.props.route.pages} />
+        <Bio/>
+
       </div>
     );
   }
 }
+
+// <LatestArticles pages={this.props.route.pages} />
 
 BlogIndex.propTypes = {
   route: React.PropTypes.object

@@ -1,7 +1,6 @@
 import React from "react";
 import moment from "moment";
 import Helmet from "react-helmet";
-import ReadNext from "../components/ReadNext";
 import { rhythm } from "utils/typography";
 import { config } from "config";
 import { Link } from "react-router";
@@ -55,39 +54,43 @@ class MarkdownWrapper extends React.Component {
     const { route } = this.props;
     const { previous, next } = getSiblingBlogs(route.path, blogs("dateDesc"));
 
+    //   <Line
+    //   className="page-progress"
+    //   percent={this.state.progress}
+    //   strokeWidth="0.2"
+    //   strokeColor="#FEC22E"
+    //   trailColor="rgba(0,0,0,0)"
+    // />
+
+    //   <div
+    //   className={`content article-title ${this.state.hide ? "show" : ""}`}
+    // >
+    //   {route.page.data.title}
+    // </div>
     return (
       <nav
         className={`article-header ${this.state.hide ? "collapse" : ""}`}
         onMouseEnter={this.mouseEnterHandler.bind(this)}
       >
-        <div
-          className={`content article-title ${this.state.hide ? "show" : ""}`}
-        >
-          {route.page.data.title}
+        <div className={`content ${this.state.hide ? "" : "show"}`}>
+          {/*<Col className="left" md={4}>*/}
+          <Link className="left" to={previous && previous.path}>
+            <div className="fingerpost">PREVIOUS</div>
+            <div>{previous && previous.data && previous.data.title}</div>
+          </Link>
+          {/*</Col>*/}
+          {/*<Col className="center" md={4}>*/}
+          <Link className="center" to="/">
+            <div className="logo" style={{ backgroundImage: `url(${config.logo})` }} />
+          </Link>
+          {/*</Col>*/}
+          {/*<Col className="right" md={4}>*/}
+          <Link className="right" to={next && next.path}>
+            <div className="fingerpost">NEXT</div>
+            <div>{next && next.data && next.data.title}</div>
+          </Link>
+          {/*</Col>*/}
         </div>
-        <Row className={`content ${this.state.hide ? "" : "show"}`}>
-          <Col className="left" md={4}>
-            {previous
-              ? <Link to={previous.path}>
-                  <div className="fingerpost">PREVIOUS</div>
-                  <div>{previous.data.title}</div>
-                </Link>
-              : null}
-          </Col>
-          <Col className="center" md={4}>
-            <Link to="/">
-              <img className="logo" src={config.logo} alt="logo" />
-            </Link>
-          </Col>
-          <Col className="right" md={4}>
-            {next
-              ? <Link to={next.path}>
-                  <div className="fingerpost">NEXT</div>
-                  <div>{next.data.title}</div>
-                </Link>
-              : null}
-          </Col>
-        </Row>
       </nav>
     );
   }
@@ -108,23 +111,14 @@ class MarkdownWrapper extends React.Component {
       <div
         className="markdown"
         style={{
-          padding: `100px ${rhythm(3)} ${rhythm(1)} ${rhythm(3)}`
+          padding: `${rhythm(1)} ${rhythm(3)}`
         }}
       >
         <Helmet title={`${post.title} | ${config.blogTitle}`} />
-        <Line
-          className="page-progress"
-          percent={this.state.progress}
-          strokeWidth="0.2"
-          strokeColor="#FEC22E"
-          trailColor="rgba(0,0,0,0)"
-        />
         {this.renderHeader()}
         <h1 style={{ marginTop: 0 }}>{post.title}</h1>
         <div className="post-date">
-          <span>
-            Posted on {moment(post.date).format("MMMM D, YYYY")}
-          </span>
+          <span>Posted on {moment(post.date).format("MMMM D, YYYY")}</span>
           {"  |  "}
           <span id="busuanzi_container_page_pv">
             <span id="busuanzi_value_page_pv" /> views

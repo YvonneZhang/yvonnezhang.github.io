@@ -10,11 +10,13 @@ export default () => {
       {" "}
       /
       {" "}
-      <a href="https://twitter.com/YvonneZhang_LOL" target="_blank">TWITTER</a>
-      {" "}
-      /
-      {" "}
       <a href="https://www.instagram.com/yvonne.zhang.sh/" target="_blank">INSTAGRAM</a>
     </footer>
   );
 };
+
+
+// {" "}
+// <a href="https://twitter.com/YvonneZhang_LOL" target="_blank">TWITTER</a>
+// {" "}
+// /

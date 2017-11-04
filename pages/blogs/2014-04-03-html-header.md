@@ -1,7 +1,6 @@
 ---
 title: "HTML5 Note #2 : The header element"
 date: "2014-04-03"
-path: "html-header"
 ---
 ## HTML5 之前
 

@@ -8,15 +8,16 @@ export default () => {
   return (
     <header>
       <nav>
+        <Link to={"/articles/"} activeClassName="active">
+          ARTICLES
+        </Link>
         <Link to={"/"}>
           <img className="logo" src={config.logo} alt="Logo" />
         </Link>
-        <Link to={"/articles/"} activeClassName="active">
-          Articles
+        <Link to={"/resume"} activeClassName="active">
+          RESUME
         </Link>
-        {/*<Link to={"/a"} activeClassName="active">
-          Résumé
-        </Link>
+        {/*
         <Link to={"/g"} activeClassName="active">
           Contact
         </Link>*/}

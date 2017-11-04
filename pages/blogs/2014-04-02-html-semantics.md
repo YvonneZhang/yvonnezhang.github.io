@@ -1,7 +1,6 @@
 ---
 title: "HTML5 Note #1：Let's Talk about Semantics"
 date: "2014-04-02"
-path: "/html-semantics/"
 ---
 ## 为什么要语义化？
 

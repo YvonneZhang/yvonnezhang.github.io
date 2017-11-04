@@ -1,7 +1,6 @@
 ---
 title: CSS Position 练习笔记
 date: "2013-12-06"
-path: "/css-position/"
 ---
 之前写页面时，总觉得对 css 不熟悉，所以这个学期就开始打好 css 的基础。现在正在看 CSS Mastery，相比 CSS The Definitive Guide 而言，读起来更有趣，自己更有做练习实践的冲动。
 
