@@ -9,9 +9,9 @@ const defaultCenter = (
   </Link>
 )
 
-export default ({left, center, right, extend}) => {
+export default ({left, center, right, extend, className}) => {
   return (
-    <header>
+    <header className={className}>
       <nav>
         <div className='item left'>
           {left}

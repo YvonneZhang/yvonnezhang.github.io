@@ -1,4 +1,5 @@
 @import "../css/theme.less";
+
 @header-height: 100px;
 @header-height-collapse: 60px;
 .markdown {
@@ -14,27 +15,13 @@
   }
 }
 
-.article-header {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  font-size: 16px;
-  background: rgba(256, 256, 256, 1);
-  box-shadow: 0px 0px 4px 0px @color-lighter-2;
-  .article-title {
-    font-size: 22px;
-    font-weight: bold;
-    height: 100%;
-  }
-  .content {
-    padding: 0 20px;
-    width: 100%;
-    display: flex;
+.md-header {
+  nav {
     justify-content: space-between;
-    a {
-      color: @color-primary;
-      & > div {
+    .item {
+      line-height: 26px;
+      .title {
+        font-size: 16px;
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
@@ -44,31 +31,11 @@
         font-size: 14px;
       }
     }
-    .center {
-      .logo {
-        background: no-repeat;
-        background-size: contain;
-        width: 56px;
-        height: 56px;
-      }
-    }
-    .left {
+    .item.left {
       text-align: left;
-      height: 100%;
-      width: 30%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      overflow: hidden;
     }
-    .right {
+    .item.right {
       text-align: right;
-      height: 100%;
-      width: 30%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      overflow: hidden;
     }
   }
 }
