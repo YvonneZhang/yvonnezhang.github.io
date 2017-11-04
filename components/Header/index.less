@@ -1,31 +1,49 @@
 @import "../../css/theme.less";
 
 header {
-  display: flex;
-  justify-content: center;
   position: fixed;
-  z-index: 9999;
+  z-index: 1;
   width: 100%;
-  background: #fff;
-  opacity: 0.92;
-  box-shadow: 0px -1px 4px 0px @color-lighter-1;
+  background: rgba(256, 256, 256, 0.92);
+  box-shadow: 0px 1px 4px 0px @color-lighter-2;
+  padding: 0 20px;
   nav {
     display: flex;
     align-items: center;
-  }
-  nav a {
-    color: @color-primary;
-    margin-right: 50px;
-    font-size: 22px;
-    &.active {
-      color: @color-darker-1;
+    justify-content: center;
+
+    a {
+      color: @color-primary;
+      margin: 25px 0px;
+      font-size: 22px;
+      &.active {
+        color: @color-darker-1;
+      }
+      &:hover {
+        color: @color-darker-1;
+      }
     }
-    &:hover {
-      color: @color-darker-1;
+
+    .item {
+      margin: 0 20px;
     }
-    .logo {
-      margin: 0;
-      width: 56px;
+
+    .item.left {
+      width: 30%;
+      text-align: right;
+    }
+
+    .item.right {
+      width: 30%;
+    }
+
+    .item.center {
+      .logo {
+        width: 56px;
+        height: 56px;
+        background: no-repeat;
+        background-size: contain;
+      }
     }
   }
 }

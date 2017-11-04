@@ -5,7 +5,6 @@ import { rhythm } from "utils/typography";
 import { config } from "config";
 import { Link } from "react-router";
 import { blogs, getSiblingBlogs } from "../utils/pages";
-import { Row, Col } from "react-grid-system";
 import { Line } from "rc-progress";
 
 import "../css/zenburn.css";
