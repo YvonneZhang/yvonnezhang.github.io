@@ -9,9 +9,9 @@ const defaultCenter = (
   </Link>
 )
 
-export default ({left, center, right, extend, className}) => {
+export default ({left, center, right, extend, className, onMouseEnter}) => {
   return (
-    <header className={className}>
+    <header onMouseEnter={onMouseEnter} className={className}>
       <nav>
         <div className='item left'>
           {left}
