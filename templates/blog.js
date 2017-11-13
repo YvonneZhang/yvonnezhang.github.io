@@ -1,18 +1,18 @@
-import React from "react";
-import { Container } from "react-grid-system";
-import { rhythm } from "utils/typography";
-import { config } from "config";
-import Helmet from "react-helmet";
-import Header from "components/Header";
-import Footer from "components/Footer";
+import React from 'react'
+import { Container } from 'react-grid-system'
+import { rhythm } from 'utils/typography'
+import { config } from 'config'
+import Helmet from 'react-helmet'
+import Header from 'components/Header'
+import Footer from 'components/Footer'
 
 class Template extends React.Component {
-  renderHeader() {
-    const location = this.props.location.pathname;
-    if (location.indexOf("/blogs/") > -1) {
-      return null;
+  renderHeader () {
+    const location = this.props.location.pathname
+    if (location.indexOf('/blogs/') > -1) {
+      return null
     }
-    return <Header />;
+    return <Header />
     // switch (location) {
     //   case "/":
     //   case "/articles/":
@@ -22,8 +22,8 @@ class Template extends React.Component {
     // }
   }
 
-  renderFooter() {
-    return <Footer />;
+  renderFooter () {
+    return <Footer />
     // switch (this.props.location.pathname) {
     //   case "/":
     //   case "/resume/":
@@ -33,16 +33,16 @@ class Template extends React.Component {
     // }
   }
 
-  render() {
-    const { children } = this.props;
+  render () {
+    const { children } = this.props
 
     return (
       <div>
         <Helmet
           title={config.blogTitle}
           meta={[
-            { name: "description", content: "Yvonne Zhang's Blog" },
-            { name: "keywords", content: "blog, articles" }
+            { name: 'description', content: "Yvonne Zhang's Blog" },
+            { name: 'keywords', content: 'blog, articles' }
           ]}
         />
         {this.renderHeader()}
@@ -55,13 +55,13 @@ class Template extends React.Component {
         </Container>
         {this.renderFooter()}
       </div>
-    );
+    )
   }
 }
 
 Template.propTypes = {
   children: React.PropTypes.any,
   route: React.PropTypes.object
-};
+}
 
-export default Template;
+export default Template

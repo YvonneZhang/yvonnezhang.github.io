@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 
 class Page404 extends Component {
-  render() {
+  render () {
     return (
       <div>
         <section>
@@ -10,8 +10,8 @@ class Page404 extends Component {
           <p>NOTHING DWELLS HERE.</p>
         </section>
       </div>
-    );
+    )
   }
 }
 
-export default Page404;
+export default Page404

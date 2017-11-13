@@ -11,7 +11,7 @@ export default () => {
   )
   const right = (
     <Link to={'/resume'} activeClassName='active'>
-      RESUME
+      RÉSUMÉ
     </Link>
   )
   return <Layout
