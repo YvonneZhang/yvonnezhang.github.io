@@ -1,0 +1,53 @@
+@color-primary: #CC9F46;
+
+.resume {
+
+  background-color: #fff;
+  box-shadow: 0px 0px 40px 3px #aaa;
+  padding: 30px;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: @color-primary;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-bottom: solid 2px @color-primary;
+    font-family: Verdana;
+    font-weight: lighter;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .background {
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+    background: url('../../images/marble-3.jpg');
+    background-size: 100%;
+  }
+
+  .inner {
+    border: 4px solid @color-primary;
+    padding: 60px 30px;
+    text-align: center;
+  }
+
+  nav {
+    float: right;
+    margin: 10px 16px;
+  }
+
+  &.black {
+    background-color: #312E2D;
+    box-shadow: 0px 0px 40px 3px #000;
+    color: #fff;
+
+    .background {
+      background-image: url('../../images/marble-black.jpg');
+    }
+  }
+}

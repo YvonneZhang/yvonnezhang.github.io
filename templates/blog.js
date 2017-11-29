@@ -13,24 +13,6 @@ class Template extends React.Component {
       return null
     }
     return <Header />
-    // switch (location) {
-    //   case "/":
-    //   case "/articles/":
-    //     return <Header />;
-    //   default:
-    //     return null;
-    // }
-  }
-
-  renderFooter () {
-    return <Footer />
-    // switch (this.props.location.pathname) {
-    //   case "/":
-    //   case "/resume/":
-    //     return null;
-    //   default:
-    //     return <Footer />;
-    // }
   }
 
   render () {
@@ -53,7 +35,7 @@ class Template extends React.Component {
         >
           {children}
         </Container>
-        {this.renderFooter()}
+        <Footer />
       </div>
     )
   }

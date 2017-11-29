@@ -1,30 +1,35 @@
 ---
-title: "简历"
+title: 简历
+layout: resume
 ---
 
-## 关于我
-一名全栈工程师，前端工程化拥趸(dǔn)。
-两年移动端亿级用户产品全栈开发经验。
-三年前端开发经验，待过大小公司。
+## About Me
+My name is Yifan Zhang and I'm a front-end developer with a passion for web design, web standards. I have 3 years of work experience in Front-End development.
 
-## 技能
-移动端 Hybrid 前端开发
-Node.js 应用开发
+## Skills
+Familiar with mobile hybrid app development and   
+Node.js development
 
-## 工作经验
-- 2017.07  - 至今 ![蚂蚁金服](http://7xl4xb.com1.z0.glb.clouddn.com/Ant_Financial_logo.png | width=100) 高级前端开发工程师 @杭州
-- 2015.07  - 2017.07 ![蚂蚁金服](http://7xl4xb.com1.z0.glb.clouddn.com/Ant_Financial_logo.png) 前端开发工程师 @杭州
-- 2014.03 - 2015.04 百姓网[logo] 前端技术实习生 @上海
-## 教育经历
-- 2011 - 2015 华东师范大学 软件工程专业（嵌入式系统方向）
+## Work Experience
+2017.07  - ongoing @Hangzhou, China   
+  <img src='http://7xl4xb.com1.z0.glb.clouddn.com/Ant_Financial_logo.png' style='height: 3rem;position: relative;top: 1rem;'/> Senior Front-End Engineer 
 
-## 自豪于
-女性工程师、敢做、沟通能力、把握机会
+2015.07  - 2017.07 @Hangzhou, China   
+  <img src='http://7xl4xb.com1.z0.glb.clouddn.com/Ant_Financial_logo.png' style='height: 3rem;position: relative;top: 1rem;'/>  Front-End Engineer 
 
-## 联系方式
-- `+86 176-2196-6680`
-- `yvonnezhang.github.io`
-- `zhyifa001@gmail.com`
-- github [@YvonneZhang](https://github.com/YvonneZhang)
+2014.03 - 2015.04  @Shanghai, China  
+  <img src='http://s.baixing.net/d/refashion-cities/images/logo2x.png' style='height: 3rem;position: relative;top: 1rem;'/> Front-End Developer Intern
 
-## WEB VERSION
+## Education
+2011 - 2015 @Shanghai, China    
+  <img src='http://7xl4xb.com1.z0.glb.clouddn.com/share20150129_100506.png' style='height: 3rem;position: relative;top: 1rem;'/> Software Engineering
+
+## Most Proud Of
+Being A Female Software Engineer  
+
+Courage I Had  
+
+Persistence  
+
+## Contact
+zhyifa001@gmail.com

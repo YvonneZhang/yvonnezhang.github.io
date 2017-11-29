@@ -10,7 +10,7 @@ export default () => {
     </Link>
   )
   const right = (
-    <Link to={'/resume'} activeClassName='active'>
+    <Link to={'/resume/'} activeClassName='active'>
       RÉSUMÉ
     </Link>
   )

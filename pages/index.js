@@ -48,26 +48,20 @@ const LatestArticles = ({ pages }) => {
   )
 }
 
-const Bio = () => (
-  <section className='bio'>
-    <div className='info'>
-      <p>HI, I'M YVONNE</p>
-      <p>A WEB DEVELOPER</p>
-      <p>CURRENTLY LIVING IN HANGZHOU, CHINA</p>
-      <p>WORKING AS A SENIOR FRONT-END ENGINEER FOR
-        <a href='https://www.alipay.com' target='_blank'> ALIPAY</a>
-      </p>
-    </div>
-    <img src={config.indexImage} />
-  </section>
-)
-
 class BlogIndex extends React.Component {
   render () {
     return (
-      <div>
-        <Bio />
-      </div>
+      <section className='bio'>
+        <div className='info'>
+          <p>HI, I'M YVONNE</p>
+          <p>A WEB DEVELOPER</p>
+          <p>CURRENTLY LIVING IN HANGZHOU, CHINA</p>
+          <p>WORKING AS A SENIOR FRONT-END ENGINEER FOR
+            <a href='https://www.alipay.com' target='_blank'> ALIPAY</a>
+          </p>
+        </div>
+        <img src={config.indexImage} />
+      </section>
     )
   }
 }
