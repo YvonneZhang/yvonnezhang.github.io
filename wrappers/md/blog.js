@@ -9,7 +9,6 @@ import { Line } from 'rc-progress'
 import HeaderLayout from 'components/Header/layout'
 import debounce from 'lodash/debounce'
 
-import 'css/zenburn.css'
 import './blog.less'
 
 class MarkdownWrapper extends React.Component {

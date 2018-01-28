@@ -5,6 +5,8 @@ import { config } from 'config'
 import Helmet from 'react-helmet'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
+import 'css/zenburn.css'
+import 'css/blog.less'
 
 class Template extends React.Component {
   renderHeader () {
