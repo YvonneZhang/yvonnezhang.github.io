@@ -1,7 +1,6 @@
 import React from 'react'
 import moment from 'moment'
 import Helmet from 'react-helmet'
-import { rhythm } from 'utils/typography'
 import { config } from 'config'
 import { Link } from 'react-router'
 import { blogs, getSiblingBlogs } from 'utils/pages'
@@ -10,6 +9,7 @@ import HeaderLayout from 'components/Header/layout'
 import debounce from 'lodash/debounce'
 
 import './blog.less'
+import 'highlight.js/styles/tomorrow'
 
 class MarkdownWrapper extends React.Component {
   constructor () {
@@ -93,23 +93,16 @@ class MarkdownWrapper extends React.Component {
     const {route} = this.props
     const post = route.page.data
     return (
-      <div
-        className='markdown'
-        style={{
-          padding: `${rhythm(1)} ${rhythm(3)}`
-        }}
-      >
-        <Helmet title={`${post.title} | ${config.blogTitle}`} />
+      <div>
         {this.renderHeader()}
-        <h1 style={{marginTop: 0}}>{post.title}</h1>
-        <div className='post-date'>
-          <span>Posted on {moment(post.date).format('MMMM D, YYYY')}</span>
-          {'  |  '}
-          <span id='busuanzi_container_page_pv'>
-            <span id='busuanzi_value_page_pv' /> views
-          </span>
-        </div>
-        <div dangerouslySetInnerHTML={{__html: post.body}} />
+        <article className='markdown-body'>
+          <Helmet title={`${post.title} | ${config.blogTitle}`} />
+          <h1 style={{marginTop: 0}}>{post.title}</h1>
+          <div className='post-date'>
+            <span>Posted on {moment(post.date).format('MMMM D, YYYY')}</span>
+          </div>
+          <div dangerouslySetInnerHTML={{__html: post.body}} />
+        </article>
       </div>
     )
   }

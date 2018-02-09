@@ -43,10 +43,7 @@ module.exports = React.createClass({
           <TypographyStyle typography={typography} />
           <GoogleFont typography={typography} />
           {css}
-          <script
-            async
-            src='//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js'
-          />
+          <link href='https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css' type='stylesheet' />
         </head>
         <body>
           <div id='react-mount' dangerouslySetInnerHTML={{ __html: body }} />

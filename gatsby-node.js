@@ -1,7 +1,10 @@
+var px2rem = require('postcss-px2rem')
+
 exports.modifyWebpackConfig = function (config, stage) {
-  // config._loaders.js.config.query.plugins.push([
-  //   "import",
-  //   { libraryName: "antd", style: true }
-  // ]);
+  config.merge({
+    postcss: [
+      px2rem({remUnit: 18})
+    ]
+  })
   return config
 }

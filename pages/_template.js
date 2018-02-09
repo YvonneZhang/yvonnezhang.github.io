@@ -1,5 +1,4 @@
 import React from 'react'
-import Blank from 'templates/blank'
 import Blog from 'templates/blog'
 
 export default props => {

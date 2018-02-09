@@ -1,7 +1,6 @@
 import React from 'react'
 import moment from 'moment'
 import { Link } from 'react-router'
-import { config } from 'config'
 import { blogs } from '../../utils/pages'
 import './index.less'
 
