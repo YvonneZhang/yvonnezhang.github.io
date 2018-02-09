@@ -5,6 +5,7 @@ import { GoogleFont, TypographyStyle } from 'react-typography'
 import typography from './utils/typography'
 import { config } from 'config'
 
+const GOOGLE_ANALYSIS_ID = config.google_analysis_id
 const BUILD_TIME = new Date().getTime()
 
 module.exports = React.createClass({
@@ -50,6 +51,15 @@ module.exports = React.createClass({
         <body>
           <div id='react-mount' dangerouslySetInnerHTML={{ __html: body }} />
           <script src={prefixLink(`/bundle.js?t=${BUILD_TIME}`)} />
+
+          {/* Global site tag (gtag.js) - Google Analytics */}
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYSIS_ID}`} />
+          <script dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments)}
+            gtag('js', new Date());
+            gtag('config', '${GOOGLE_ANALYSIS_ID}');`
+          }} />
         </body>
       </html>
     )
