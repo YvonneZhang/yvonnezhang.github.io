@@ -2,9 +2,27 @@
 
 @height: 80px;
 
+@keyframes wider {
+  from { width: 0px; }
+  50% { width: 40px;}
+  to   { width: 0px; }
+}
+
 footer {
   color: @color-text-1;
   height: @height;
+  margin: 30px 0;
   text-align: center;
   line-height: @height;
+  &::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background: @color-lighter-1;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    animation: wider 5s infinite;
+  }
 }

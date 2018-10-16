@@ -4,14 +4,12 @@ import { Link } from 'react-router'
 import { sortBy, get } from 'lodash'
 import include from 'underscore.string/include'
 
-import { config } from 'config'
 import { rhythm } from 'utils/typography'
 import { prefixLink } from 'gatsby-helpers'
 
 import { Row, Col } from 'react-grid-system'
-import './index.less'
-import Layout from 'components/Header'
 import BG from '../images/index-background.jpg'
+import './index.less'
 
 const LatestArticles = ({ pages }) => {
   // Sort pages.
@@ -58,7 +56,7 @@ class BlogIndex extends React.Component {
       <section className='bio'>
         <div className='info'>
           <p>HI, I'M YVONNE</p>
-          <p>A FRONT END DEVELOPER</p>
+          <p>A FRONT END DEVELOPER WITH A PASSION FOR DESIGN</p>
           <p>CURRENTLY LIVING IN SHANGHAI, CHINA</p>
           <p>WORKING @<a href='https://www.antfin.com/index.htm?locale=en_us' target='_blank'> ANT FINACIAL</a>
           </p>

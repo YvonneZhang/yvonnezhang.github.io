@@ -62,28 +62,31 @@
   }
   nav {
     justify-content: space-between;
-    .item {
+
+    .fingerpost {
+      color: @color-lighter-1;
+      font-size: 14px;
+    }
+
+
+    .title {
+      font-size: 16px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    a {
+      overflow: hidden;
       line-height: 26px;
-      .title {
-        font-size: 16px;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
+
+      &:first-child {
+        text-align: left;
+        width: 30%;
       }
-      .fingerpost {
-        color: @color-lighter-1;
-        font-size: 14px;
-      }
-    }
-    .item.left {
-      text-align: left;
-    }
-    .item.right {
-      text-align: right;
-    }
-    .item.center {
-      .article-title {
-        color: @color-darker-1;
+      &:last-child {
+        text-align: right;
+        width: 30%;
       }
     }
   }
