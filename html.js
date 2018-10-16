@@ -4,6 +4,7 @@ import { prefixLink } from 'gatsby-helpers'
 import { GoogleFont, TypographyStyle } from 'react-typography'
 import typography from './utils/typography'
 import { config } from 'config'
+import logo from './images/favicon.jpg'
 
 const GOOGLE_ANALYSIS_ID = config.google_analysis_id
 const BUILD_TIME = new Date().getTime()
@@ -31,7 +32,7 @@ module.exports = React.createClass({
     return (
       <html lang='en'>
         <head>
-          <link rel='icon' href={config.favicon} type='image/x-icon' />
+          <link rel='icon' href={logo} type='image/x-icon' />
           <meta charSet='utf-8' />
           <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
           <meta
