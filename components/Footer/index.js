@@ -4,9 +4,13 @@ import './index.less'
 export default () => {
   return (
     <footer>
-      © 2017 YVONNE ZHANG •
+      © 2018 YVONNE ZHANG •
       {' '}
       <a href='https://github.com/YvonneZhang' target='_blank'>GITHUB</a>
+      {' '}
+      /
+      {' '}
+      <a href='https://www.linkedin.com/in/yifan-zhang-bbab60139/' target='_blank'>LINKEDIN</a>
       {' '}
       /
       {' '}

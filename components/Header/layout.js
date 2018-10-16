@@ -2,10 +2,11 @@ import React from 'react'
 import {Link} from 'react-router'
 import {config} from 'config'
 import './index.less'
+import logo from '../../images/logo.png'
 
 const defaultCenter = (
-  <Link to={'/'}>
-    <div className='logo' style={{backgroundImage: `url(${config.logo})`}} />
+  <Link to={'/'} activeClassName='active'>
+    <div className='logo' style={{backgroundImage: `url(${logo})`}} />
   </Link>
 )
 
@@ -13,15 +14,9 @@ export default ({left, center, right, extend, className, onMouseEnter}) => {
   return (
     <header onMouseEnter={onMouseEnter} className={className}>
       <nav>
-        <div className='item left'>
-          {left}
-        </div>
-        <div className='item center'>
-          {center || defaultCenter}
-        </div>
-        <div className='item right'>
-          {right}
-        </div>
+        {left}
+        {center || defaultCenter}
+        {right}
       </nav>
       {extend}
     </header>
